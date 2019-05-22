@@ -1,0 +1,73 @@
+<style>
+	form {
+		width: 50% ;
+		margin: auto;
+		padding: 10px;
+		border: 1px solid blue ;
+		border-radius: 10px;
+		overflow: hidden;		
+		}
+</style>
+
+<form action="insert1.php" id="return f1()" > 
+
+<input type = text name="UCID" id = "userf1" placeholder="required" > UCID<br><br>
+<input type = text name="pass" id = "passf1" placeholder="required"> pass<br><br>
+<input type = text name="pass2" id = "pass2f1" placeholder="required"> pass-again<br><br>
+<input type = text name="name" id = "namef1" placeholder="required"> name<br><br>
+<input type = text name="mail_address" id = "mailf1" placeholder="required"> mail<br><br>
+<input type = text name="initial" id = "initialf1" placeholder="required"> initial<br><br>
+<input type = "checkbox" id="receipt" name="email receipt" value="email"> 
+<label for="receipt"> email receipt</label>
+<input type=submit value="Create New Account">
+</form>
+
+<form action="depositOrWithdraw.php" id="return f2()" >
+
+<input type = text name="UCID" id = "userf2" placeholder="required" > UCID<br><br>
+<input type = text name="pass" id = "passf2" placeholder="required" > pass<br><br>
+<input type = text name="amount" id = "amountf2" placeholder="0.00"  > amount<br><br>
+<input type = text name="service" id = "servicef2" placeholder="required" > service<br><br>
+<input type = "checkbox" id="receipt" name="email receipt" value="email"> 
+<label for="receipt"> email receipt</label>
+<select name = "service">
+	<option value='D'> Deposit </option>
+	<option value='W'> Withdraw </option>
+</select>
+<button type="button">Perform Transactions (D or W)</button>
+</form>
+
+<form action="display.php" id="return f3()" >
+
+<input type = text name="UCID" id = "userf3" placeholder="required" > UCID<br><br>
+<input type = text name="pass" id = "passf3" placeholder="required" > pass<br><br>
+<input type = text name="number" id = "numberf3" placeholder="required" > number<br><br>
+<input type = "checkbox" id="receipt" name="email receipt" value="email"> 
+<label for="receipt"> email receipt</label>
+<input type=submit value="Display Transactions">
+</form>
+
+<script>
+	function f1() {
+		var ptrX = document.getElementById("pass")
+		var v = ptrX.value ; alert("v is" + v )
+		
+		//return true or false depending on whether X is empty or nothing
+		//if X is empty then return false else return true
+		if ( v == "") 
+		{ alert (v + "bad - empty") ; return false; } 
+		else { return true; }
+	}
+	function f2() {
+		var ptrX2 = document.getElementById("UCID")
+		var v2 = ptrX2.value ; alert("v2 is" + v2 )
+		
+		//return true or false depending on whether X is empty or nothing
+		//if X is empty then return false else return true
+		if ( v2 == "") 
+		{ alert (v2 + "bad - empty") ; return false; } 
+		else { return true; }
+	}
+	
+	
+</script>

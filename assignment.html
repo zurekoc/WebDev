@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<meta charset= "utf-8">
+<style>		
+#box { width:5 1em;}
+	   form { 	width: 50% ;
+				margin: auto ; 
+				border: 1px solid blue ;  
+				border-radius: 10px;  
+				padding: 10px; 
+		}	
+</style>
+
+<form action="insert_revised.php" > 
+<input type=text name="UCID" placeholder="required">Enter UCID <br><br>
+<input type=text name="pass" placeholder="required">Enter pass <br><br>
+<input type=text name="name" placeholder="required">Enter name <br><br>
+<input type=text name="mail" placeholder="required">Enter mail <br><br>
+<input type=text name="initial" placeholder="required">Enter initial <br><br>
+<input type=text name="current1" placeholder="required">Enter current1 <br><br>
+<input type=text name="plaintext" placeholder="required">Enter plaintext <br><br>
+<input type=submit value="Create New Account">
+</form>
+
+<form action="deposit-withdraw.php" id="myform" onsubmit="return f()" >
+Enter UCID <input type = text name="UCID" placeholder="required"id = "UCID"  > <br><br>
+Enter password<input type = text name="pass" placeholder="required"id = "pass"  > <br><br>
+Enter amount<input type = text name="amount" placeholder="required"id = "amount"  > <br><br>
+Mail <input type = text name="mail" value="N" id = "box"  > 
+<select name = "type" id = "option">
+	<option value='D'> Deposit </option>
+	<option value='W'> Withdraw </option>
+</select><br><br>
+<input type=submit>
+</form>
+
+<form action="display_revised.php">
+UCID<input type = text name="UCID" id = "UCID" placeholder="required" ><br><br>
+pass<input type = text name="pass" id = "pass" placeholder="required" ><br><br>
+Number<input type = text name="number" id = "number" placeholder="required" > <br><br>
+<input type = "checkbox" id="receipt" name="email receipt" value="email"> 
+<label for="receipt"> email receipt</label>
+<input type=submit value="Display Results">
+</form>
+
+
+<script>
+var ptrUCID = document.getElementById( "UCID")
+ptrUCID.addEventListener ("blur", f)
+    var warning1 = document.getElementById("warning1")
+    
+var ptrmyform = document.getElementById("myform")
+ptrmyform.addEventListener("submit" , 
+                           function (event)
+                             {
+                               if (UCID.value=="")
+                                 {event.preventDefault()}
+                             }
+                          )
+    
+
+function f()
+{
+  var v = document.getElementById("UCID")
+  var w = v.value
+  if ( w == "") { alert (w + "Bad"); return}
+  
+  var w1 = document.getElementById("UCID").value
+  if(w1 == "") { warning1.innerHTML = "Please fill in UCID."}
+  else         { warning1.innerHTML = ""}
+  
+  if( w1 == "" ) { return false } else {return true }
+}
+</script>
